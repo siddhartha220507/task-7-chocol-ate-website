@@ -1,0 +1,11 @@
+Model Information:
+* title:	chocolatebar
+* source:	https://sketchfab.com/3d-models/chocolatebar-90b1fcc1906840948e1ddc0ed3d9a918
+* author:	Sksskd (https://sketchfab.com/Sksskd)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "chocolatebar" (https://sketchfab.com/3d-models/chocolatebar-90b1fcc1906840948e1ddc0ed3d9a918) by Sksskd (https://sketchfab.com/Sksskd) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

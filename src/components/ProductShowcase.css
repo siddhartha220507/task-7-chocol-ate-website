@@ -1,0 +1,222 @@
+/* ============================
+   Product Showcase — pinned horizontal scroll
+   ============================ */
+
+.ps-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--bg-primary);
+}
+
+/* Label top-left */
+.ps-label {
+  position: absolute;
+  top: 2rem;
+  left: 4rem;
+  z-index: 10;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  opacity: 0.8;
+}
+
+/* Viewport clips the track */
+.ps-viewport {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Track: all cards side by side */
+.ps-track {
+  display: flex;
+  width: 500%; /* 5 cards × 100vw — updated in JS */
+  height: 100%;
+  will-change: transform;
+}
+
+/* Each card = one full viewport */
+.ps-card {
+  width: 100vw;
+  height: 100vh;
+  flex-shrink: 0;
+  display: grid;
+  grid-template-columns: 55% 45%;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Left: image fills its column */
+.ps-image-side {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.ps-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.15);
+  opacity: 0;
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.8s ease;
+  will-change: transform, opacity;
+}
+
+.ps-card.in-view .ps-img {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Card index badge */
+.ps-card-number {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 2.5rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 5rem;
+  font-weight: 900;
+  color: rgba(255,255,255,0.08);
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Flavor tag */
+.ps-flavor-tag {
+  position: absolute;
+  top: 2.5rem;
+  left: 2.5rem;
+  background: var(--accent-gold);
+  color: #1c110a;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.4rem 1.2rem;
+  border-radius: 50px;
+}
+
+/* Right: text block */
+.ps-text-block {
+  padding: 0 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s, opacity 0.8s ease 0.2s;
+  will-change: transform, opacity;
+}
+
+.ps-card.in-view .ps-text-block {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ps-eyebrow {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  opacity: 0.7;
+  margin: 0;
+}
+
+.ps-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  background: linear-gradient(135deg, var(--accent-gold), #ffcf96);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+.ps-desc {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 440px;
+}
+
+.ps-price {
+  font-family: 'Outfit', sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.ps-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: var(--accent-gold);
+  color: #1c110a;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.9rem 2.2rem;
+  border-radius: 50px;
+  border: none;
+  cursor: none;
+  width: max-content;
+  transition: background 0.25s ease, transform 0.2s ease;
+  letter-spacing: 0.03em;
+}
+
+.ps-btn:hover {
+  background: var(--accent-gold-hover);
+  transform: translateX(4px);
+}
+
+/* Progress dots bottom-center */
+.ps-dots {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.6rem;
+  z-index: 10;
+}
+
+.ps-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(212, 163, 115, 0.3);
+  transition: all 0.4s ease;
+}
+
+.ps-dot.active {
+  background: var(--accent-gold);
+  width: 28px;
+  border-radius: 4px;
+}
+
+/* Vertical gold separator between columns */
+.ps-card::after {
+  content: '';
+  position: absolute;
+  left: 55%;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--accent-gold), transparent);
+  opacity: 0.2;
+}

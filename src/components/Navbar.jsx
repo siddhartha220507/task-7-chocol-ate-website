@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ShoppingBag, Menu, X, Leaf } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -24,14 +25,18 @@ const Navbar = () => {
     >
       <div className="container nav-content">
         <div className="logo-container">
-          <Leaf className="logo-icon" />
-          <span className="logo-text">NuttyCocoa</span>
+          <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <Leaf className="logo-icon" />
+            <span className="logo-text">NuttyCocoa</span>
+          </Link>
         </div>
 
         <div className="nav-links desktop-only">
-          <a href="#about" className="nav-link">Our Story</a>
-          <a href="#collection" className="nav-link">The Collection</a>
-          <a href="#ingredients" className="nav-link">Ingredients</a>
+          <Link to="/" className="nav-link">Home</Link>
+          <Link to="/products" className="nav-link">Products</Link>
+          <Link to="/story" className="nav-link">Our Story</Link>
+          <Link to="/ingredients" className="nav-link">Ingredients</Link>
+          <Link to="/contact" className="nav-link">Contact</Link>
         </div>
 
         <div className="nav-actions">
@@ -56,9 +61,11 @@ const Navbar = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <a href="#about" onClick={() => setIsMobileMenuOpen(false)}>Our Story</a>
-          <a href="#collection" onClick={() => setIsMobileMenuOpen(false)}>The Collection</a>
-          <a href="#ingredients" onClick={() => setIsMobileMenuOpen(false)}>Ingredients</a>
+          <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
+          <Link to="/products" onClick={() => setIsMobileMenuOpen(false)}>Products</Link>
+          <Link to="/story" onClick={() => setIsMobileMenuOpen(false)}>Our Story</Link>
+          <Link to="/ingredients" onClick={() => setIsMobileMenuOpen(false)}>Ingredients</Link>
+          <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
         </motion.div>
       )}
     </motion.nav>

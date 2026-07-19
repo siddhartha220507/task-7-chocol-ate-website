@@ -1,0 +1,25 @@
+/* ---- Custom Cursor Image ---- */
+.custom-cursor-img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* Instead of forcing width/height, we scale it down so it retains its exact native shape */
+  transform: translate(-10%, -10%) scale(0.4); 
+  transform-origin: top left;
+  pointer-events: none;
+  z-index: 99999;
+  will-change: transform;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.6));
+}
+
+/* ---- Nut Particles ---- */
+.nut-particle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99998;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
+  will-change: transform, opacity;
+}
