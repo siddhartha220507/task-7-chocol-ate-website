@@ -1,0 +1,280 @@
+/* Flavor Matcher Floating Button & Modal Styles */
+
+.flavor-matcher-trigger {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.4rem;
+  background: linear-gradient(135deg, rgba(212, 163, 115, 0.95), rgba(163, 107, 60, 0.95));
+  color: #1c110a;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(212, 163, 115, 0.4);
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.flavor-matcher-trigger:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 30px rgba(212, 163, 115, 0.6);
+  background: linear-gradient(135deg, #e6b88a, #c47c43);
+}
+
+.flavor-matcher-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  background: #1c110a;
+  color: #d4a373;
+  border-radius: 50%;
+  font-size: 0.85rem;
+}
+
+/* Modal Overlay */
+.flavor-matcher-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 6, 4, 0.75);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Modal Container */
+.flavor-matcher-card {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  background: linear-gradient(145deg, rgba(35, 23, 15, 0.95), rgba(20, 12, 8, 0.98));
+  border: 1px solid rgba(212, 163, 115, 0.3);
+  border-radius: 24px;
+  padding: 2.2rem;
+  color: #faedcd;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(212, 163, 115, 0.15);
+  overflow: hidden;
+  animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.flavor-matcher-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 50% 0%, rgba(212, 163, 115, 0.12), transparent 70%);
+  pointer-events: none;
+}
+
+.flavor-matcher-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: rgba(250, 237, 205, 0.7);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.flavor-matcher-close:hover {
+  background: rgba(212, 163, 115, 0.3);
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+.flavor-matcher-header {
+  margin-bottom: 1.8rem;
+  text-align: center;
+}
+
+.flavor-matcher-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #faedcd, #d4a373);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.4rem;
+}
+
+.flavor-matcher-subtitle {
+  font-size: 0.9rem;
+  color: rgba(250, 237, 205, 0.6);
+  line-height: 1.4;
+}
+
+/* Sections inside modal */
+.flavor-group {
+  margin-bottom: 1.6rem;
+}
+
+.flavor-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #d4a373;
+  margin-bottom: 0.8rem;
+}
+
+.flavor-val-badge {
+  background: rgba(212, 163, 115, 0.15);
+  border: 1px solid rgba(212, 163, 115, 0.3);
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  color: #faedcd;
+}
+
+/* Range Slider */
+.cocoa-slider {
+  width: 100%;
+  accent-color: #d4a373;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Nut Tags Selection */
+.nuts-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.nut-chip {
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(212, 163, 115, 0.2);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: rgba(250, 237, 205, 0.8);
+  cursor: pointer;
+  transition: all 0.25 ease;
+  user-select: none;
+}
+
+.nut-chip:hover {
+  border-color: rgba(212, 163, 115, 0.6);
+  background: rgba(212, 163, 115, 0.1);
+}
+
+.nut-chip.active {
+  background: linear-gradient(135deg, rgba(212, 163, 115, 0.3), rgba(163, 107, 60, 0.3));
+  border-color: #d4a373;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 0 10px rgba(212, 163, 115, 0.2);
+}
+
+/* Texture Option Buttons */
+.texture-selector {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+}
+
+.texture-btn {
+  padding: 0.6rem 0.4rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(212, 163, 115, 0.2);
+  border-radius: 12px;
+  font-size: 0.8rem;
+  color: rgba(250, 237, 205, 0.8);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.texture-btn.active {
+  background: #d4a373;
+  color: #1c110a;
+  font-weight: 700;
+  border-color: #d4a373;
+}
+
+/* Result Card Box */
+.blend-result-box {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px dashed rgba(212, 163, 115, 0.4);
+  border-radius: 16px;
+  padding: 1.2rem;
+  margin-top: 1.4rem;
+  text-align: center;
+  position: relative;
+}
+
+.blend-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #d4a373;
+  margin-bottom: 0.4rem;
+}
+
+.blend-desc {
+  font-size: 0.82rem;
+  color: rgba(250, 237, 205, 0.7);
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.action-btn {
+  width: 100%;
+  padding: 0.85rem;
+  background: linear-gradient(135deg, #d4a373, #b87b43);
+  color: #1c110a;
+  border: none;
+  border-radius: 50px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(212, 163, 115, 0.3);
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 163, 115, 0.5);
+  background: linear-gradient(135deg, #e0b080, #c4844c);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}

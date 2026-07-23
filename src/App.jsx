@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
+import FlavorMatcherModal from './components/FlavorMatcherModal';
 import Home from './pages/Home';
 import Products from './pages/Products';
 import Story from './pages/Story';
@@ -21,6 +22,7 @@ function App() {
         <Route path="/ingredients" element={<Ingredients />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <FlavorMatcherModal />
       <Footer />
     </>
   );
